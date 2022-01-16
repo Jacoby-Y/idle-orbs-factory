@@ -97,6 +97,11 @@ document.body.onload = ()=>{
 		triggers.speed_mult += 0.1;
 		gui.conveyor_speed();
 	}
+
+	$("#base").onclick = ()=>{
+		spawner.upgrade_value();
+		gui.base();
+	}
 }
 
 const gui = {
@@ -108,10 +113,12 @@ const gui = {
 	gate3: ()=> get("#gate3 h3").innerText = (triggers.gate3.unlock)? `Value: x${triggers.gate3.mult+0.25} ($${format_num(triggers.gate3.cost)})` : `Unlock Gate 3: ($${format_num(triggers.gate3.unlock_cost)})`,
 	gate4: ()=> get("#gate4 h3").innerText = (triggers.gate4.unlock)? `Value: x${triggers.gate4.mult+0.25} ($${format_num(triggers.gate4.cost)})` : `Unlock Gate 4: ($${format_num(triggers.gate4.unlock_cost)})`,
 
-	spawner_speed: (v1, v2)=> get("#spawner #speed h3").innerText = `Spawn Speed: x${spawner.speed_mult+0.25} ($${format_num(spawner.speed_cost)})`,
-	amount: (v)=> get("#spawner #amount h3").innerText = `Buy Spawner: $${format_num(spawner.amount_cost)}`,
+	spawner_speed: ()=> get("#spawner #speed h3").innerText = `Spawn Speed: x${spawner.speed_mult+0.25} ($${format_num(spawner.speed_cost)})`,
+	amount: ()=> get("#spawner #amount h3").innerText = `Buy Spawner: $${format_num(spawner.amount_cost)}`,
 
-	conveyor_speed: (v1, v2)=> get("#conveyor #speed h3").innerText = `Conveyor Speed: x${Math.round((triggers.speed_mult+0.1)*10)/10} ($${triggers.speed_cost})`,
+	conveyor_speed: ()=> get("#conveyor #speed h3").innerText = `Conveyor Speed: x${Math.round((triggers.speed_mult+0.1)*10)/10} ($${format_num(triggers.speed_cost)})`,
+
+	base: ()=> get("#base h3").innerText = `Base Value: ${format_num(spawner.value*2)} ($${format_num(spawner.value_cost)})`,
 };
 
 export default gui;

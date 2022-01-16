@@ -4,7 +4,7 @@ const triggers = {
 	speed_cost: 100,
 	gate1: {
 		mult: 1.25,
-		unlock_cost: 50,
+		unlock_cost: 10,
 		unlock: false,
 		px: 20,
 		cost: 50,
@@ -69,7 +69,7 @@ const triggers = {
 	draw() {
 		// collector | destroyer
 		Jel.fill_color = "red";
-		Jel.rect1(Jel.w - 10, 0, 10, Jel.h*0.75);
+		Jel.rect1(Jel.w - 15, 0, 15, Jel.h*0.75);
 
 		// Gate 1
 		if (this.gate1.unlock) {

@@ -21,16 +21,18 @@ body {
 }
 #cash-txt {
 	padding: 0.5rem 0.7rem;
+	font-size: 1.5rem;
 }
 
 #menus {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr;
+	padding: 5px;
+	gap: 5px;
+	background-color: #666;
 }
-#menus > div {
-	border: 2px solid white;
-}
+#menus > div { background-color: #333; }
 
 .btn {
 	text-align: center;
@@ -42,4 +44,14 @@ body {
 }
 .btn:hover {
 	background-color: #3a3a3a;
+}
+
+@media only screen and (max-width: 800px){
+	#menus {
+		grid-template-rows: max-content max-content max-content;
+		grid-template-columns: 1fr;
+	}
+	#menus > div {
+		padding-bottom: 5rem;
+	}
 }

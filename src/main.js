@@ -14,7 +14,7 @@ Jel.run((t)=>{
 		Jel.clear();
 
 		// Conveyor
-		Jel.fill_color = "white";
+		Jel.fill_color = "#444";
 		Jel.rect1(0, Jel.h*0.75, Jel.w, Jel.h*0.25);
 		Jel.line_color = "black";
 		Jel.line1(0, Jel.h*0.75+1, Jel.w, Jel.h*0.75+1);
